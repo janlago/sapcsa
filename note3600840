@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<targetsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" desc="3600840 - [CVE-2025-42989] Missing Authorization check in SAP NetWeaver Application Server for ABAP" id="Z_3600840" multisql="Yes" version="0000" xsi:schemaLocation="csa_policy.xsd">
+  <!-- Add Check items -->
+  <!-- VULMA 1618[p2-CVSS 8.5] BC-MID-RFC 0003554667 - [CVE-2025-23186] Mixed Dynamic RFC Destination vulnerability through Remote Function Call (RFC) in SAP NetWeaver Application Server (Version 7) -->
+  <configstore name="SAP_KERNEL">
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Kernel patch required for SNote 3600840 " id="0003600840_k">
+      <compliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &gt;= '0030'</compliant>
+      <noncompliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &lt; '0030'</noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '914_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '914_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Kernel patch required for SNote 3600840 " id="0003600840_k">
+      <compliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &gt;= '0015'</compliant>
+      <noncompliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &lt; '0015'</noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '915_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '915_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Kernel patch required for SNote 3600840 " id="0003600840_k">
+      <compliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &gt;= '9999'</compliant>
+      <noncompliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &lt; '9999'</noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '781_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '781_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Kernel patch required for SNote 3600840 " id="0003600840_k">
+      <compliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &gt;= '9999'</compliant>
+      <noncompliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &lt; '9999'</noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '785_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '785_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Kernel patch required for SNote 3600840 " id="0003600840_k">
+      <compliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &gt;= '0413'</compliant>
+      <noncompliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &lt; '0413'</noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '789_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '789_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Kernel patch required for SNote 3600840 " id="0003600840_k">
+      <compliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &gt;= '0310'</compliant>
+      <noncompliant>NAME = 'KERN_PATCHLEVEL' and lpad(VALUE,4,'0') &lt; '0310'</noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '793_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '793_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+  </configstore>
+  <configstore name="ABAP_INSTANCE_PAHI">
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Parameter activated for SNote 3600840" id="0003600840_p">
+      <compliant>NAME = 'rfc/authCheckInPlayback' and VALUE = '1'</compliant>
+      <noncompliant>NAME = 'rfc/authCheckInPlayback' and VALUE != '1' </noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '914_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '914_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Parameter activated for SNote 3600840" id="0003600840_p">
+      <compliant>NAME = 'rfc/authCheckInPlayback' and VALUE = '1'</compliant>
+      <noncompliant>NAME = 'rfc/authCheckInPlayback' and VALUE != '1' </noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '915_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '915_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Parameter activated for SNote 3600840" id="0003600840_p">
+      <compliant>NAME = 'rfc/authCheckInPlayback' and VALUE = '1'</compliant>
+      <noncompliant>NAME = 'rfc/authCheckInPlayback' and VALUE != '1' </noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '781_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '781_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Parameter activated for SNote 3600840" id="0003600840_p">
+      <compliant>NAME = 'rfc/authCheckInPlayback' and VALUE = '1'</compliant>
+      <noncompliant>NAME = 'rfc/authCheckInPlayback' and VALUE != '1' </noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '785_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '785_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Parameter activated for SNote 3600840" id="0003600840_p">
+      <compliant>NAME = 'rfc/authCheckInPlayback' and VALUE = '1'</compliant>
+      <noncompliant>NAME = 'rfc/authCheckInPlayback' and VALUE != '1' </noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '789_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '789_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+    <checkitem desc="[p2-CVSS 9.6] [CVE-2025-42989]  BC-MID-RFC - Parameter activated for SNote 3600840" id="0003600840_p">
+      <compliant>NAME = 'rfc/authCheckInPlayback' and VALUE = '1'</compliant>
+      <noncompliant>NAME = 'rfc/authCheckInPlayback' and VALUE != '1' </noncompliant>
+      <joinstore name="SAP_KERNEL" no_data_found="No">
+        <joincompliant>NAME = 'KERN_REL' and VALUE = '793_REL'</joincompliant>
+        <joinnoncompliant>NAME = 'KERN_REL' and VALUE = '793_REL'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+  </configstore>
+</targetsystem>
