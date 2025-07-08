@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Jan Goedtke - OEDIV KG>
+<targetsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" desc="3621771  3620498 3621236 3610892" id="Z_Patchday_7_2025_PD" multisql="Yes" version="0000" xsi:schemaLocation="csa_policy.xsd">
+  <!-- Add Check items -->
+  <!-- VULMA 1620 2025-07: 3610892 - [CVE-2025-42966] Insecure Deserialization vulnerability in SAP NetWeaver (XML Data Archiving Service) -->
+    <configstore name="COMP_LEVEL" system_type="JAVA">
+    <checkitem desc="VULMA 1620 2025-07: 3610892 - [CVE-2025-42966] Insecure Deserialization vulnerability in SAP NetWeaver (XML Data Archiving Service)" id="0003610892_JAVA">
+      <compliant>
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '026' and LPAD( PATCH, 6, '0') &gt;= '000012' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '027' and LPAD( PATCH, 6, '0') &gt;= '000015' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &gt;= '000014' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &gt;= '000009' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &gt;= '000007' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &gt;= '000006' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &gt;= '000001' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '033' and LPAD( PATCH, 6, '0') &gt;= '000000' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '034' and LPAD( PATCH, 6, '0') &gt;= '000000' )  
+</compliant>
+      <complianttext>SP ist ok - </complianttext>
+      <noncompliant>
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '026' and LPAD( PATCH, 6, '0') &lt; '000012' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '027' and LPAD( PATCH, 6, '0') &lt; '000015' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &lt; '000014' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &lt; '000009' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &lt; '000007' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &lt; '000006' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &lt; '000001' ) or
+            ( COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') &lt;= '025') or
+            ( COMPONENT = 'J2EE-APPS' and VERSION != '7.50'  ) 
+    </noncompliant>
+      <noncomplianttext>SP muss gepatcht werden, kein Workaround - </noncomplianttext>
+      <joinstore name="COMP_LEVEL" no_data_found="Yes">
+        <joincompliant> COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '033' </joincompliant>
+        <joinnoncompliant> COMPONENT = 'J2EE-APPS' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '033' </joinnoncompliant>
+      </joinstore>
+    </checkitem>
+  </configstore>
+  <!-- Add Check items -->
+  <!-- VULMA 1620 2025-07: 3621236 - [CVE-2025-42964] Insecure Deserialization in SAP NetWeaver Enterprise Portal Administration -->
+  <!-- 3604119 - - [CVE-2025-42999] Insecure Deserialization in SAP NetWeaver -->
+  <configstore name="COMP_LEVEL" system_type="JAVA">
+    <checkitem desc="VULMA 1620 2025-07: 3621236 - [CVE-2025-42964] Insecure Deserialization in SAP NetWeaver Enterprise Portal Administration" id="0003621236_JAVA">
+      <compliant>
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '027' and LPAD( PATCH, 6, '0') &gt;= '000003' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &gt;= '000003' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &gt;= '000002' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &gt;= '000001' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &gt;= '000001' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &gt;= '000001' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '033' and LPAD( PATCH, 6, '0') &gt;= '000000' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '034' and LPAD( PATCH, 6, '0') &gt;= '000000' ) 
+        </compliant>
+      <complianttext>SP ist ok - </complianttext>
+      <noncompliant>
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '027' and LPAD( PATCH, 6, '0') &lt; '000003' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &lt; '000003' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &lt; '000002' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &lt; '000001' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &lt; '000001' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &lt; '000001' ) or
+            ( COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') &lt;= '026') or
+            ( COMPONENT = 'EP-ADMIN' and VERSION != '7.50'  ) 
+        </noncompliant>
+      <noncomplianttext>SP muss gepatcht werden, temporärer Workaround, nicht empfohlen - </noncomplianttext>
+      <joinstore name="COMP_LEVEL" no_data_found="Yes">
+        <joincompliant> COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '039'</joincompliant>
+        <joinnoncompliant> COMPONENT = 'EP-ADMIN' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '039'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+  </configstore>
+  <!-- Add Check items -->
+  <!-- 3620498 - [CVE-2025-42980] Insecure Deserialization in SAP NetWeaver Enterprise Portal Federated Portal Network -->
+  <configstore name="COMP_LEVEL" system_type="JAVA">
+    <checkitem desc="VULMA 1620 2025-07: 3620498 - [CVE-2025-42980] Insecure Deserialization in SAP NetWeaver Enterprise Portal Federated Portal Network" id="0003620498_JAVA">
+      <compliant>
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '027' and LPAD( PATCH, 6, '0') &gt;= '000007' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &gt;= '000007' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &gt;= '000007' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &gt;= '000005' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &gt;= '000004' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &gt;= '000001' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '033' and LPAD( PATCH, 6, '0') &gt;= '000000' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '034' and LPAD( PATCH, 6, '0') &gt;= '000000' ) 
+        </compliant>
+      <complianttext>SP ist ok - </complianttext>
+      <noncompliant>
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '027' and LPAD( PATCH, 6, '0') &lt; '000007' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &lt; '000007' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &lt; '000007' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &lt; '000005' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &lt; '000004' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &lt; '000001' ) or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') &lt;= '026') or
+            ( COMPONENT = 'EP-RUNTIME' and VERSION != '7.50'  ) 
+        </noncompliant>
+      <noncomplianttext>SP muss gepatcht werden, temporärer Workaround, nicht empfohlen - </noncomplianttext>
+      <joinstore name="COMP_LEVEL" no_data_found="Yes">
+        <joincompliant> COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '039'</joincompliant>
+        <joinnoncompliant> COMPONENT = 'EP-RUNTIME' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '039'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+  </configstore>
+  <!-- 3621771 - [CVE-2025-42963] Insecure Deserialization in SAP NetWeaver Application Server for Java (Log Viewer )-->
+  <configstore name="COMP_LEVEL" system_type="JAVA">
+    <checkitem desc="VULMA 1620 2025-07: 3621771 - [CVE-2025-42963] Insecure Deserialization in SAP NetWeaver Application Server for Java (Log Viewer )" id="0003621771_JAVA">
+      <compliant>
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &gt;= '000011' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &gt;= '000008' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &gt;= '000009' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &gt;= '000006' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &gt;= '000001' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '033' and LPAD( PATCH, 6, '0') &gt;= '000000' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '034' and LPAD( PATCH, 6, '0') &gt;= '000000' ) 
+        </compliant>
+      <complianttext>SP ist ok - </complianttext>
+      <noncompliant>
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '028' and LPAD( PATCH, 6, '0') &lt; '000011' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '029' and LPAD( PATCH, 6, '0') &lt; '000008' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '030' and LPAD( PATCH, 6, '0') &lt; '000009' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '031' and LPAD( PATCH, 6, '0') &lt; '000006' ) or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') = '032' and LPAD( PATCH, 6, '0') &lt; '000001' ) or
+                        ( COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') &lt;= '028') or
+            ( COMPONENT = 'LMNWABASICAPPS' and VERSION != '7.50'  ) 
+        </noncompliant>
+      <noncomplianttext>SP muss gepatcht werden, temporärer Workaround, nicht empfohlen - </noncomplianttext>
+      <joinstore name="COMP_LEVEL" no_data_found="Yes">
+        <joincompliant> COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '039'</joincompliant>
+        <joinnoncompliant> COMPONENT = 'LMNWABASICAPPS' and VERSION = '7.50' and LPAD( SP, 3, '0') between '000' and '039'</joinnoncompliant>
+      </joinstore>
+    </checkitem>
+  </configstore>
+</targetsystem>
